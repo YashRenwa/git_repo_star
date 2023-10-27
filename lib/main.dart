@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:git_repo_star/constants.dart';
+import 'package:git_repo_star/view/most_starred_repo_screen.dart';
 import 'package:git_repo_star/view/most_starred_repo_screen.dart';
 
 void main() {
@@ -14,7 +16,12 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       builder: (_, child) {
         return MaterialApp(
-          home: MostStarredRepoScreen(),
+          theme: ThemeData(
+            appBarTheme: AppBarTheme(
+              color: appThemeColor,
+            ),
+          ),
+          home: const MostStarredRepoScreen(),
         );
       },
     );

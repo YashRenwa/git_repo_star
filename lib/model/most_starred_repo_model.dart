@@ -4,40 +4,24 @@ import 'dart:convert';
 class MostStarredRepo {
   String name;
   String description;
-  int numberOfStars;
+  int starGazers;
   String userName;
-  String userAvatar;
+  String avatarUrl;
   MostStarredRepo({
     required this.name,
     required this.description,
-    required this.numberOfStars,
+    required this.starGazers,
     required this.userName,
-    required this.userAvatar,
+    required this.avatarUrl,
   });
-
-  MostStarredRepo copyWith({
-    String? name,
-    String? description,
-    int? numberOfStars,
-    String? userName,
-    String? userAvatar,
-  }) {
-    return MostStarredRepo(
-      name: name ?? this.name,
-      description: description ?? this.description,
-      numberOfStars: numberOfStars ?? this.numberOfStars,
-      userName: userName ?? this.userName,
-      userAvatar: userAvatar ?? this.userAvatar,
-    );
-  }
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'name': name,
       'description': description,
-      'numberOfStars': numberOfStars,
+      'starGazers': starGazers,
       'userName': userName,
-      'userAvatar': userAvatar,
+      'avatarUrl': avatarUrl,
     };
   }
 
@@ -45,11 +29,14 @@ class MostStarredRepo {
     return MostStarredRepo(
       name: map['name'] as String,
       description: map['description'] as String,
-      numberOfStars: map['numberOfStars'] as int,
+      starGazers: map['starGazers'] as int,
       userName: map['userName'] as String,
-      userAvatar: map['userAvatar'] as String,
+      avatarUrl: map['avatarUrl'] as String,
     );
   }
 
   String toJson() => json.encode(toMap());
+
+  factory MostStarredRepo.fromJson(String source) =>
+      MostStarredRepo.fromMap(json.decode(source) as Map<String, dynamic>);
 }
