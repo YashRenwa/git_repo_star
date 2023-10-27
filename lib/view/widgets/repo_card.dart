@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:git_repo_star/constants.dart';
 import 'package:git_repo_star/model/most_starred_repo_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:readmore/readmore.dart';
@@ -23,7 +24,7 @@ class _RepoCardState extends State<RepoCard> {
       ),
       decoration: BoxDecoration(
         border: Border.all(
-          color: Color(0xffe4e4e4),
+          color: borderColor,
           width: 1,
         ),
         borderRadius: BorderRadius.circular(0.03.sw),
@@ -50,7 +51,7 @@ class _RepoCardState extends State<RepoCard> {
                     widget.mostStarredRepo.userName,
                     style: GoogleFonts.poppins(
                       fontSize: 0.03.sw,
-                      color: Color(0xff313131),
+                      color: textColor,
                     ),
                   ),
                 ],
@@ -61,7 +62,7 @@ class _RepoCardState extends State<RepoCard> {
                     "🌟 ${widget.mostStarredRepo.starGazers} stars",
                     style: GoogleFonts.poppins(
                       fontSize: 0.03.sw,
-                      color: Color(0xff313131),
+                      color: textColor,
                     ),
                   ),
                 ],
@@ -75,7 +76,7 @@ class _RepoCardState extends State<RepoCard> {
             widget.mostStarredRepo.name,
             style: GoogleFonts.montserrat(
               fontSize: 0.04.sw,
-              color: Color(0xff313131),
+              color: textColor,
               fontWeight: FontWeight.bold,
             ),
           ),

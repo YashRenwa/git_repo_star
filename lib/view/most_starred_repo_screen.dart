@@ -90,8 +90,10 @@ class _MostStarredRepoScreenState extends State<MostStarredRepoScreen> {
                 child: CircularProgressIndicator.adaptive(),
               ),
             ),
-            newPageProgressIndicatorBuilder: (context) => SizedBox(
-              height: 0.05.sh,
+            newPageProgressIndicatorBuilder: (context) => Container(
+              margin: EdgeInsets.symmetric(
+                vertical: 0.03.sh,
+              ),
               child: const Center(
                 child: CircularProgressIndicator.adaptive(),
               ),
